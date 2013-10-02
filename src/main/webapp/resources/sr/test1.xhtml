@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:sr="http://java.sun.com/jsf/composite/sr">
+      
+      <composite:interface>
+		<composite:attribute name="val1" type="java.lang.String"/>
+		<composite:attribute name="val2" type="java.lang.String"/>
+		<composite:attribute name="val3" type="java.lang.String" default="#{null}"/>
+		<composite:attribute name="val4" type="java.lang.String" default="#{null}"/>
+		</composite:interface>
+		
+		<composite:implementation>
+		<h:panelGrid>
+		<h:outputText value="Outer1: #{cc.attrs.val1 == null ? 'null' : (empty cc.attrs.val1 ? 'empty' : cc.attrs.val1)}" />
+		<h:outputText value="Outer2: #{cc.attrs.val2 == null ? 'null' : (empty cc.attrs.val2 ? 'empty' : cc.attrs.val2)}" />
+		<h:outputText value="Outer3: #{cc.attrs.val3 == null ? 'null' : (empty cc.attrs.val3 ? 'empty' : cc.attrs.val3)}" />
+		<h:outputText value="Outer4: #{cc.attrs.val4 == null ? 'null' : (empty cc.attrs.val4 ? 'empty' : cc.attrs.val4)}" />
+		</h:panelGrid>
+		<sr:test2 val1="#{cc.attrs.val1}" val2="#{cc.attrs.val2}" val3="#{cc.attrs.val3}" val4="#{cc.attrs.val4}" /> 
+		</composite:implementation>
+</html>

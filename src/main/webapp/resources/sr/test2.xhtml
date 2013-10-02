@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+	 <composite:interface>
+		<composite:attribute name="val1" type="java.lang.String"/>
+		<composite:attribute name="val2" type="java.lang.String" default="#{null}"/>
+		<composite:attribute name="val3" type="java.lang.String"/>
+		<composite:attribute name="val4" type="java.lang.String" default="#{null}"/>
+	</composite:interface>
+	
+	<composite:implementation>
+		<h:panelGrid>
+			<h:outputText value="Inner1: #{cc.attrs.val1 == null ? 'null' : (empty cc.attrs.val1 ? 'empty' : cc.attrs.val1)}" />
+			<h:outputText value="Inner2: #{cc.attrs.val2 == null ? 'null' : (empty cc.attrs.val2 ? 'empty' : cc.attrs.val2)}" />
+			<h:outputText value="Inner3: #{cc.attrs.val3 == null ? 'null' : (empty cc.attrs.val3 ? 'empty' : cc.attrs.val3)}" />
+			<h:outputText value="Inner4: #{cc.attrs.val4 == null ? 'null' : (empty cc.attrs.val4 ? 'empty' : cc.attrs.val4)}" />
+		</h:panelGrid>
+	</composite:implementation>
+</html>
